@@ -36,8 +36,8 @@ server:
 
 ```yaml
 server: 
-	port: 8080  
-name: abc
+  port: 8080  
+  name: abc
 ```
 
 ## yaml数据格式
