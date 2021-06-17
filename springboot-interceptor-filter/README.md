@@ -1,4 +1,5 @@
-#springboot整合Filter过滤器
+
+# springboot整合Filter过滤器
 
 
 > 说明：在springboot项目中定义的过滤器，默认是无法执行了。需要开启Servlet组件扫描之后springboot才可以识别到filter过滤器，开始过滤请求和响应。
@@ -34,7 +35,7 @@ public class MainApp {
 > **@ServletComponentScan("com.itheima.filter") ：表示开启Servlet的组件扫描。**
 
 
-#springboot整合拦截器
+# springboot整合拦截器
 
 拦截器：拦截controller中的方法调用，对目标方法进行前置、后置增强操作。
 
