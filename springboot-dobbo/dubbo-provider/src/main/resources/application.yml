@@ -1,0 +1,15 @@
+server:
+  port: 81 # 应用的端口号
+
+#dubbo配置
+dubbo:
+  application:
+    name: dubbo-provider #服务名称
+  registry:
+    address: zookeeper://192.168.175.125:2181 #注册中心地址
+  protocol:
+    port: 20880 # 服务在注册中心内部占用的端口号
+    name: dubbo # 采用dubbo协议，只能是这个名字
+  scan:
+    base-packages: com.itheima.controller #要发布服务类所在的包
+

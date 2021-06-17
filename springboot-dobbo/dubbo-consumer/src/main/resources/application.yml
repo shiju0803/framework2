@@ -1,0 +1,12 @@
+server:
+  port: 80
+   #注册中心地址
+#dubbo配置
+dubbo:
+  application:
+    name: dubbo-consumer #应用的名称
+  registry:
+    address: zookeeper://192.168.175.125:2181 #注册中心地址
+  scan:
+    base-packages: com.itheima.controller
+
