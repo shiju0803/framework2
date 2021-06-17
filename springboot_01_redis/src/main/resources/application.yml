@@ -1,0 +1,6 @@
+#配置redis连接参数
+spring:
+  redis:
+    host: 192.168.175.125 #redis的主机
+    port: 6379
+    password: root
