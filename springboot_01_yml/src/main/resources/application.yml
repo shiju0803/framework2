@@ -1,0 +1,9 @@
+server:
+  port: 80
+
+
+person:
+  name: "黄桂田"
+  age: 23
+  desc: "勇闯天涯，我自狂嗨！"
+
