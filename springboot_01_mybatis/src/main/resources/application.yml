@@ -1,0 +1,12 @@
+#配置连接数据库参数
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///ssm_db?useSSL=false
+    username: root
+    password: root
+
+#mybatis配置：配置映射配置文件的位置、核心配置文件的位置、别名
+mybatis:
+  type-aliases-package: com.shiju.domain
+  mapper-locations: classpath:/com/shiju/mapper/*Mapper.xml
