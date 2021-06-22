@@ -1,0 +1,16 @@
+#elasticsearch连接参数
+spring:
+  elasticsearch:
+    rest:
+      uris: 192.168.175.125:9200
+
+  # 配置数据源
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/es?serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+
+# 配置mybatis信息,用注解方式配置SQL可以不用配置别名
+mybatis:
+  type-aliases-package: com.itheima.domain
