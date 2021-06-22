@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>京东手机-添加商品</title>
+    <style>
+        .p-attr {
+            border: 1px solid gainsboro;
+            width: 800px;
+            height: 25px;
+            margin: 5px;
+            outline: none;
+            font-size: 10px;
+        }
+    </style>
+    <script src="js/vue.js"></script>
+    <script src="js/axios-0.18.0.js"></script>
+</head>
+<body>
+<!---->
+<div>
+    <img height="30" src="img/head.jpg" width="100%"/>
+</div>
+
+<!---->
+<div id="div3" style="height: 500px">
+    <!--搜索框-->
+    <div style="text-align: center; height:80px; background: url(img/logo.jpg) no-repeat">
+
+        <input placeholder=" 请输入搜索信息 " style="border: 3px solid red;outline:none; height: 25px; width: 600px; margin-top: 25px;"
+               type="text">
+
+        <input style="border: 3px solid red;outline:none; height: 33px; width: 100px; margin-top: 25px; background-color: red; color: white; font-weight: bold"
+               type="button"
+               value=" 搜 索 ">
+
+        <div style="color: #999; font-size: 10px"> 华为手机 | 手机自营 | 华为 | 苹果手机 | 小米 | 手机5g | 小米手机 | 小米10 | 荣耀 | 苹果 12</div>
+
+    </div>
+
+    <hr>
+
+    <!--商品列表展示-->
+    <div style="width: 80%; padding-left: 200px; margin-top: 30px">
+
+        商品标题：<input class="p-attr" type="text" v-model="product.title"><br>
+        商品价格：<input class="p-attr" type="text" v-model="product.price"><br>
+        商品图片：<input class="p-attr" type="text" v-model="product.img"><br>
+        商品链接：<input class="p-attr" type="text" v-model="product.href"><br>
+        评论数量：<input class="p-attr" type="text" v-model="product.commit"><br>
+        店铺名称：<input class="p-attr" type="text" v-model="product.shop"><br><br>
+
+        <input @click="addProduct"
+               style="font-size: 18px; background-color: #ff4d4d; border: 0; outline: 0!important; color: #fff;width: 150px; height: 30px; cursor: pointer; text-align: center"
+               type="button"
+               value=" 添加商品">
+
+    </div>
+
+</div>
+
+<!---->
+<div style="clear: both">
+    <hr>
+    <img height="500" src="img/foot.jpg" width="100%"/>
+</div>
+
+<script>
+
+    new Vue({
+        el: "#div3",
+        data: {
+            product: {
+                "title": "联想(Lenovo)天逸510S 酷睿版 英特尔酷睿i5 台式机电脑整机(i5-10400 8G 1T wifi win10 三年上门)21.5英寸",
+                "price": "3699.00",
+                "img": "https://img13.360buyimg.com/n7/jfs/t1/156282/36/3079/30679/5feb0352E4086f045/234b839213794c6d.jpg",
+                "href": "https://item.jd.com/100014047068.html",
+                "commit": "25万+",
+                "shop": "联想京东自营旗舰店"
+            }
+        },
+        methods: {
+            addProduct: function () {
+                axios.post("/product/add", this.product).then(res => {
+                    alert(res.data);
+                });
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
