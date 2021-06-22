@@ -1,0 +1,11 @@
+#自定义elasticsearch配置类读取的参数
+elasticsearch:
+  host: 192.168.175.125
+  port: 9200
+
+
+#导入elasticsearch起步依赖后自动读取的参数配置
+spring:
+  elasticsearch:
+    rest:
+      uris: 192.168.175.125:9200
